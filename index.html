@@ -6,40 +6,57 @@
     <title>Juego de Teoría de Conjuntos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-image: linear-gradient(to right, #74ebd5, #9face6);
+            color: #333;
         }
         .game-container {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4CAF50;
         }
         .set {
-            margin: 10px 0;
-            font-size: 1.2em;
+            margin: 15px 0;
+            font-size: 1.5em;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #e0f7fa;
         }
         #question {
             margin: 20px 0;
             font-weight: bold;
+            font-size: 1.2em;
         }
         input[type="text"] {
-            width: 200px;
-            padding: 5px;
+            width: calc(100% - 20px);
+            padding: 10px;
             margin-right: 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
         }
         button {
-            padding: 5px 10px;
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1em;
         }
         button:hover {
             background-color: #45a049;
@@ -47,15 +64,19 @@
         #feedback {
             margin-top: 20px;
             font-weight: bold;
+            font-size: 1.1em;
         }
         #score {
             margin-top: 20px;
+            font-size: 1.2em;
+            color: #4CAF50;
         }
         #venn-diagram {
             width: 300px;
             height: 200px;
             margin: 20px auto;
             position: relative;
+            overflow: hidden;
         }
         .circle {
             position: absolute;
@@ -65,12 +86,14 @@
             opacity: 0.5;
         }
         #circle-a {
-            background-color: red;
-            left: 50px;
+            background-color: rgba(255, 0, 0, 0.6);
+            left: 30px;
+            top: 25px;
         }
         #circle-b {
-            background-color: blue;
-            right: 50px;
+            background-color: rgba(0, 0, 255, 0.6);
+            right: 30px;
+            top: 25px;
         }
     </style>
 </head>
@@ -111,6 +134,7 @@
                 node.style.position = 'absolute';
                 node.style.left = `${Math.random() * 100}px`;
                 node.style.top = `${Math.random() * 100}px`;
+                node.style.fontSize = '0.9em';
                 circleA.appendChild(node);
             });
 
@@ -120,6 +144,7 @@
                 node.style.position = 'absolute';
                 node.style.left = `${Math.random() * 100}px`;
                 node.style.top = `${Math.random() * 100}px`;
+                node.style.fontSize = '0.9em';
                 circleB.appendChild(node);
             });
         }
